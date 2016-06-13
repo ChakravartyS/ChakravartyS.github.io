@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Visualization of Rainfall Data for Hampton</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Visualization of Rainfall Data for Hampton">
+  <meta name="author" content="Srinivas Chakravarty">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Visualization of Rainfall Data for Hampton</h1>
+    <h2>Recorded at Bentleigh (086006) Weather Station</h2>
+    <p>Srinivas Chakravarty<br/>Developing Data Products Course Assignment</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Background</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The Australian Government Bureau of Meterology (BOM) maintains records of various aspects of climate data such as Rainfall, Temperature, and Wind etc.</p>
+
+<p>The data is recorded at several locations through appropriately located Weather Stations.</p>
+
+<p>BOM makes past data (currently from 1937 to 2006) freely available online to the general public.</p>
+
+<p>Rainfall data for Hampton (Victoria), as recorded at Bentleigh (086006) Weather Station, has been chosen as a suitable candidate for visualization, with emphasis on providing a simplified interface for the end user to visualize the data in a concise format.</p>
+
+<p>The user can specify the Month and the Cut-off Year in order to see the Rainfall pattern for THAT Month across years, from THAT Cut-off Year onwards.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Technical Details</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The Shiny App for this project consists of R-code in the <b>ui.R</b> and <b>server.R</b> components.</p>
+
+<p>Component <b>ui.R</b> provides the user a <b>Drop-Down</b> box from which the Month of Interest can be selected. The Cut-off Year of Interest is selected on a <b>Slider Bar</b>.</p>
+
+<p>Default values are provided for both the Month and the Year of Interest.</p>
+
+<p>Component <b>server.R</b> reads in the Rainfall CSV data. It maps Month Names to Month Numbers, and interactively extracts ALL available information for <b>THE SELECTED</b> Month from <b>THE SELECTED</b> Year onwards.</p>
+
+<p>The extracted data is presented as a Graph which changes dynamically as the selections are changed.</p>
+
+<p style="color:red">
+<b>The end user does NOT need to understand the implementation of the underlying technical details in order to use the App</b>.
+</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Data Contents</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Here are random rows of the <b>HamptonMonthlyRainfall1937-2006.csv</b> file showing the Year, Month and Rainfall columns needed for visualization</p>
+
+<pre><code>    ProductCode StationNumber Year Month Rainfall Quality
+543  IDCJAC0001         86006 1984     3     53.0       Y
+777  IDCJAC0001         86006 2005    11     95.8       Y
+155  IDCJAC0001         86006 1950     8     44.5       Y
+716  IDCJAC0001         86006 1998     8     26.2       Y
+740  IDCJAC0001         86006 2000     8     37.4       Y
+213  IDCJAC0001         86006 1955     6     97.6       Y
+463  IDCJAC0001         86006 1977     7     60.0       Y
+59   IDCJAC0001         86006 1942     8     74.6       Y
+514  IDCJAC0001         86006 1981    10     57.0       Y
+765  IDCJAC0001         86006 2003     8     64.6       Y
+22   IDCJAC0001         86006 1939     7     21.8       Y
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Screen Presentation</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Here is an example of <b>Input</b> from an end user and the resulting <b>Graph</b></p>
+
+<p><img src="HamptonMonthlyRainfall.png" alt = "Screenshot" width = "985" height = "400"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Background'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Technical Details'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Data Contents'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Screen Presentation'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
